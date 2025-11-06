@@ -1,1 +1,0 @@
-React + Three.js Test
