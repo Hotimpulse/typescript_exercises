@@ -8,6 +8,10 @@ function logData(data: unknown) {
         value = data;
         console.log(value);
     }
+
+    if (Array.isArray(data)) {
+        console.log(data);
+    }
 }
 
 logData(23);
@@ -169,8 +173,8 @@ const data = arrowGeneric<User>({ username: "123" });
 // Generic constraints
 
 function createEntity<T extends { id: string; createdAt: Date }>(arg: T) {
-    arg.
-}
+    arg
+};
 
 createEntity<User>({});
 
@@ -273,3 +277,10 @@ export default function TypeScript() {
         </>
     );
 }
+
+let value: unknown;
+let str: string = value; // not allowed Type 'unknown' is not assignable to type 'string'.ts(2322)
+
+// unknown is a supertype, and can't be a subtype apart from itself or any;
+
+// never => subtype for everyone but can't be a supertype;
