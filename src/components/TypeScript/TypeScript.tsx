@@ -284,3 +284,7 @@ let str: string = value; // not allowed Type 'unknown' is not assignable to type
 // unknown is a supertype, and can't be a subtype apart from itself or any;
 
 // never => subtype for everyone but can't be a supertype;
+
+// TypeScript is a language with static typings
+// Treat types as sets
+// Don't use any, type assertions, as non-null operator in prod
